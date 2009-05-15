@@ -1,7 +1,7 @@
 
 %define realname   Search-QueryParser
 %define version    0.93
-%define release    %mkrel 1
+%define release    %mkrel 2
 
 Name:       perl-%{realname}
 Version:    %{version}
