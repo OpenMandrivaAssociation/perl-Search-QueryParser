@@ -1,21 +1,18 @@
+%define upstream_name    Search-QueryParser
+%define upstream_version 0.93
 
-%define realname   Search-QueryParser
-%define version    0.93
-%define release    %mkrel 2
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
-Name:       perl-%{realname}
-Version:    %{version}
-Release:    %{release}
-License:    GPL or Artistic
-Group:      Development/Perl
 Summary:    Parses a query string into a data structure
-Source:     http://www.cpan.org/modules/by-module/Search/%{realname}-%{version}.tar.gz
-Url:        http://search.cpan.org/dist/%{realname}
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: perl-devel
-
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Search/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildArch: noarch
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module parses a query string into a data structure to be handled by
@@ -32,7 +29,7 @@ these should be done externally, before passing the query data structure to
 the search engine.
 
 %prep
-%setup -q -n %{realname}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version} 
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -53,5 +50,4 @@ rm -rf %buildroot
 %doc Changes README
 %{_mandir}/man3/*
 %perl_vendorlib/*
-
 
