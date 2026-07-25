@@ -1,15 +1,15 @@
 %define upstream_name    Search-QueryParser
-%define upstream_version 0.94
+%define upstream_version 0.95
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	Parses a query string into a data structure
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Search/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://github.com/damil/Search-QueryParser
+Source0:	https://cpan.metacpan.org/authors/id/D/DA/DAMI/Search-QueryParser-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
