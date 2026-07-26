@@ -1,15 +1,13 @@
 %define upstream_name    Search-QueryParser
-%define upstream_version 0.95
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	0.95
+Release:	2
 
 Summary:	Parses a query string into a data structure
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/damil/Search-QueryParser
-Source0:	https://cpan.metacpan.org/authors/id/D/DA/DAMI/Search-QueryParser-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/D/DA/DAMI/Search-QueryParser-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -30,7 +28,7 @@ these should be done externally, before passing the query data structure to
 the search engine.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version} 
+%setup -q -n %{upstream_name}-%{version} 
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -58,8 +56,7 @@ make test
 
 * Tue Jul 28 2009 Jérôme Quelin <jquelin@mandriva.org> 0.930.0-1mdv2010.0
 + Revision: 401612
-- rebuild using %%perl_convert_version
-- fixed license field
+- rebuild using %0.95 fixed license field
 
 * Fri May 15 2009 Jérôme Quelin <jquelin@mandriva.org> 0.93-2mdv2010.0
 + Revision: 375903
